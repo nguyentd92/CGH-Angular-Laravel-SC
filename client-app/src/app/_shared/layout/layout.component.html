@@ -86,7 +86,7 @@
                           <div class="header-cart-menu d-flex align-items-center ml-auto">
                               <!-- Cart Area -->
                               <div class="cart">
-                                  <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Your Bag $20</a>
+                                  <a (click)="toggleCart()" id="header-cart-btn"><span class="cart_quantity">2</span> <i class="ti-bag"></i> Your Bag $20</a>
                                   <!-- Cart List Area Start -->
                                   <ul class="cart-list">
                                       <li>
@@ -107,8 +107,8 @@
                                       </li>
                                       <li class="total">
                                           <span class="pull-right">Total: $20.00</span>
-                                          <a href="cart.html" class="btn btn-sm btn-cart">Cart</a>
-                                          <a href="checkout-1.html" class="btn btn-sm btn-checkout">Checkout</a>
+                                          <a routerLink="/cart" class="btn btn-sm btn-cart">Cart</a>
+                                          <a routerLink="/check-out" class="btn btn-sm btn-checkout">Checkout</a>
                                       </li>
                                   </ul>
                               </div>
@@ -143,20 +143,20 @@
 
                               <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                   <ul class="navbar-nav animated" id="nav">
-                                      <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                                      <li class="nav-item dropdown">
+                                      <li class="nav-item active"><a class="nav-link" routerLink="/">Home</a></li>
+                                      <!-- <li class="nav-item dropdown">
                                           <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                           <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                              <a class="dropdown-item" href="index.html">Home</a>
-                                              <a class="dropdown-item" href="shop.html">Shop</a>
-                                              <a class="dropdown-item" href="product-details.html">Product Details</a>
-                                              <a class="dropdown-item" href="cart.html">Cart</a>
-                                              <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                              <a class="dropdown-item" routerLink="/">Home</a>
+                                              <a class="dropdown-item" routerLink="shop.html">Shop</a>
+                                              <a class="dropdown-item" routerLink="product-details.html">Product Details</a>
+                                              <a class="dropdown-item" routerLink="cart.html">Cart</a>
+                                              <a class="dropdown-item" routerLink="checkout.html">Checkout</a>
                                           </div>
-                                      </li>
-                                      <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                      <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Shoes</a></li>
-                                      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                      </li> -->
+                                      <li class="nav-item"><a class="nav-link" routerLink="/shop">Dresses</a></li>
+                                      <li class="nav-item"><a class="nav-link" routerLink="/shop"><span class="karl-level">hot</span> Shoes</a></li>
+                                      <!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
                                   </ul>
                               </div>
                           </nav>
