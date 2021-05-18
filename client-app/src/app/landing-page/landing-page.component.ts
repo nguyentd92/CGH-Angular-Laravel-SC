@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Banner, GetBannersResponse, GET_BANNERS_API } from '../_api/landing-page.api';
 
 declare const $;
 @Component({
@@ -7,8 +9,9 @@ declare const $;
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
+  banners: Array<Banner> = []
 
-  constructor() { }
+  constructor(private readonly http: HttpClient) { }
 
   ngOnInit(): void {
     if ($.fn.owlCarousel) {
@@ -21,6 +24,11 @@ export class LandingPageComponent implements OnInit {
         smartSpeed: 1200
       });
     }
+
+    this.fetchBanners()
   }
 
+  fetchBanners() {
+    this.http.get<GetBannersResponse>(GET_BANNERS_API).subscribe(res => this.banners = res.data)
+  }
 }

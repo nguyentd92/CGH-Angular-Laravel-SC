@@ -1,4 +1,3 @@
-
 // DISCOUNT PROGRAMS API
 export const GET_DISCOUNT_PROGRAMS_API = 'get-discount-programs';
 
@@ -40,7 +39,8 @@ export interface Banner {
   collection: string;
   title: string;
   btn_title: string;
-  link: string;
+  bg_url: string;
+  link?: string;
 }
 
 
