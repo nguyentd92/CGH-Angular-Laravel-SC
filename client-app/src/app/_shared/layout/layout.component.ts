@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DiscountProgram, GetDiscountProgramsResponse, GET_DISCOUNT_PROGRAMS_API } from 'src/app/_api/landing-page.api';
 
 declare const $;
 
@@ -8,8 +10,9 @@ declare const $;
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  discountPrograms: Array<DiscountProgram> = [];
 
-  constructor() { }
+  constructor(private readonly http: HttpClient) { }
 
   ngOnInit(): void {
     window.addEventListener('click', () => {
@@ -27,6 +30,12 @@ export class LayoutComponent implements OnInit {
     document.querySelector('#sideMenuClose').addEventListener('click', () => {
       document.querySelector('#wrapper').classList.remove('karl-side-menu-open');
     })
+
+    this.fetchDiscountPrograms();
+  }
+
+  fetchDiscountPrograms() {
+    this.http.get<GetDiscountProgramsResponse>(GET_DISCOUNT_PROGRAMS_API).subscribe(res => this.discountPrograms = res.data)
   }
 
   toggleCart() {
